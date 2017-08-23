@@ -8,12 +8,13 @@
 		<script src="./semantic/dist/semantic.min.js"></script>
 	</head>
 	<body>
+		<div class="ui huge blue header">Menu</div>
 		<div class="ui two column stackable grid">
 			<div class="column">
 				<div class="ui fluid image">
 					<div class="ui blue ribbon label">
-						<i class="spoon icon"></i> Name1
-					</div>
+						<i class="spoon icon"></i><a class="dishName" href="part_02.html">Pancakes</a>
+</div>
 					<img src="https://i.pinimg.com/736x/7b/ed/2f/7bed2f317042d87109838026f1254d7e--dessert-illustration-watercolour-illustration.jpg">
 				</div>
 				<div class="ui tag labels price">
@@ -23,34 +24,71 @@
 				</div>
 				<p>The next step will differ depending on what version of Meteor you are running. The next step will differ depending on what version of Meteor you are running. The next step will differ depending on what version of Meteor you are running. The next step will differ depending on what version of Meteor you are running.</p>
 				<div class="ui buttons">
-					<button class="ui button">Edit</button>
+					<button class="ui button" onclick="Edit()"><a href="part_02.html">Edit</a></button>
 					<div class="or"></div>
-					<button class="ui positive button">Delete</button>
+					<button class="ui positive button" onclick="Delete()">Delete</button>
 				</div>
+				<input id="date" type="date">
 			</div>
 			<div class="column">
 				<div class="ui fluid image">
 					<div class="ui blue ribbon label">
-						<i class="spoon icon"></i> Name2
+						<i class="spoon icon"></i><a class="dishName" href="part_02.html">Breakfast</a>
 					</div>
 					<img src="http://payload197.cargocollective.com/1/12/405306/6258007/full-english-breakfast-illustration-watercolour-food_800.jpg">
 				</div>
+				<div class="ui tag labels price">
+					<a class="ui label">
+						$10.00
+					</a>
+				</div>
+				<p>The next step will differ depending on what version of Meteor you are running. The next step will differ depending on what version of Meteor you are running. The next step will differ depending on what version of Meteor you are running. The next step will differ depending on what version of Meteor you are running.</p>
+				<div class="ui buttons">
+					<button class="ui button" onclick="Edit()"><a href="part_02.html">Edit</a></button>
+					<div class="or"></div>
+					<button class="ui positive button" onclick="Delete()">Delete</button>
+				</div>
+				<input id="date" type="date">
 			</div>
 			<div class="column">
 				<div class="ui fluid image">
 					<div class="ui blue ribbon label">
-						<i class="spoon icon"></i> Name3
+						<i class="spoon icon"></i><a class="dishName" href="part_02.html">Pasta</a>
 					</div>
-					<img src="https://i.pinimg.com/736x/1d/28/4f/1d284f873f37b7f31248c2a1ad4754a8--watercolor-food-watercolor-illustration.jpg">
+					<img src="https://s-media-cache-ak0.pinimg.com/736x/24/a1/c8/24a1c82c13217081dfff85685412925e.jpg">
 				</div>
+				<div class="ui tag labels price">
+					<a class="ui label">
+						$10.00
+					</a>
+				</div>
+				<p>The next step will differ depending on what version of Meteor you are running. The next step will differ depending on what version of Meteor you are running. The next step will differ depending on what version of Meteor you are running. The next step will differ depending on what version of Meteor you are running.</p>
+				<div class="ui buttons">
+					<button class="ui button" onclick="Edit()"><a href="part_02.html">Edit</a></button>
+					<div class="or"></div>
+					<button class="ui positive button" onclick="Delete()">Delete</button>
+				</div>
+				<input id="date" type="date">
 			</div>
 			<div class="column">
 				<div class="ui fluid image">
 					<div class="ui blue ribbon label">
-						<i class="spoon icon"></i> Name4
+						<i class="spoon icon"></i><a class="dishName" href="part_02.html">Salad</a>
 					</div>
-					<img src="https://i.pinimg.com/736x/7b/ed/2f/7bed2f317042d87109838026f1254d7e--dessert-illustration-watercolour-illustration.jpg">
+					<img src="http://4.bp.blogspot.com/-U0fjufzUeaY/WJ4eI_r41SI/AAAAAAAABNs/Ymo0ZMuokhYa8GiN-2HDId23PBy1tZ-SACK4B/s1600/chiken_salad_1levashova.jpg">
 				</div>
+				<div class="ui tag labels price">
+					<a class="ui label">
+						$10.00
+					</a>
+				</div>
+				<p>The next step will differ depending on what version of Meteor you are running. The next step will differ depending on what version of Meteor you are running. The next step will differ depending on what version of Meteor you are running. The next step will differ depending on what version of Meteor you are running.</p>
+				<div class="ui buttons">
+					<button class="ui button" onclick="Edit()"><a href="part_02.html">Edit</a></button>
+					<div class="or"></div>
+					<button class="ui positive button" onclick="Delete()">Delete</button>
+				</div>
+				<input id="date" type="date">
 			</div>
 		</div>
 
@@ -73,6 +111,16 @@
 				background-color: #2185d0
 			}
 		</style>
+
+		<script>
+			function Edit() {
+
+			}
+
+			function Delete() {
+
+			}
+		</script>
 
 	</body>
 </html>

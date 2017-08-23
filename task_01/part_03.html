@@ -8,6 +8,27 @@
 		<script src="./semantic/dist/semantic.min.js"></script>
 	</head>
 	<body>
+		<form class="ui form">
+			<div class="field">
+				<label>Name of dish</label>
+				<input type="text" name="name" disabled placeholder="Name of dish">
+			</div>
+			<div class="field">
+				<label>Description</label>
+				<textarea disabled></textarea>
+			</div>
+			<div class="field">
+				<label>Price</label>
+				<input type="number" name="price" placeholder="Price">
+			</div>
+			<div class="field">
+				<label>Image</label>
+				<input type="file" name="image" disabled>
+			</div>
+
+			<button class="ui button" type="submit">Submit</button>
+		</form>
+
 		<div class="ui left action input">
 		  <button class="ui teal labeled icon button">
 			<i class="cart icon"></i>
@@ -15,5 +36,21 @@
 		  </button>
 		  <input type="text" value="$52.03">
 		</div>
+
+		<style>
+			body {
+				padding: 20px;
+			}
+		</style>
+
+		<script>
+		function Submit() {
+			var dish = {
+				name: $('.name').val(),
+				price: $('.price').val(),
+				image: $('.image').val()
+			}
+		}
+		</script>
 	</body>
 </html>

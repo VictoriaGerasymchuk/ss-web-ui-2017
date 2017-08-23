@@ -1,0 +1,49 @@
+<html>
+<head>
+	<title>Adding new dish</title>
+	<link rel="stylesheet" type="text/css" href="./semantic/dist/semantic.min.css">
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"
+			integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+			crossorigin="anonymous"></script>
+	<script src="./semantic/dist/semantic.min.js"></script>
+</head>
+<body>
+	<form class="ui form">
+		<div class="field">
+			<label>Name of dish</label>
+			<input type="text" class="name" placeholder="Name of dish">
+		</div>
+		<div class="field">
+			<label>Description</label>
+			<textarea></textarea>
+		</div>
+		<div class="field">
+			<label>Price</label>
+			<input type="number" class="price" placeholder="Price">
+		</div>
+		<div class="field">
+			<label>Image</label>
+			<input type="file" class="image">
+		</div>
+
+		<button class="ui button" type="submit" onclick="Submit()">Submit</button>
+	</form>
+
+	<style>
+		body {
+			padding: 20px;
+		}
+	</style>
+
+	<script>
+		function Submit() {
+			var dish = {
+				name: $('.name').val(),
+				price: $('.price').val(),
+				image: $('.image').val()
+			}
+		}
+	</script>
+
+</body>
+</html>
