@@ -11,26 +11,30 @@
 	<form class="ui form">
 		<div class="field">
 			<label>Name of dish</label>
-			<input type="text" class="name" placeholder="Name of dish">
+			<input type="text" id="name" placeholder="Name of dish">
 		</div>
 		<div class="field">
 			<label>Description</label>
-			<textarea></textarea>
+			<textarea id="description"></textarea>
 		</div>
 		<div class="field">
 			<label>Price</label>
-			<input type="number" class="price" placeholder="Price">
+			<input type="number" id="price" placeholder="Price">
 		</div>
 		<div class="field">
 			<label>Image</label>
-			<input type="file" class="image">
+			<input type="file" id="image">
 		</div>
 		<div class="field">
-			<label>Date</label>
-			<input id="date" type="date">
+			<label>Date From</label>
+			<input id="dateFrom" type="date">
+		</div>
+		<div class="field">
+			<label>Date To</label>
+			<input id="dateTo" type="date">
 		</div>
 
-		<button class="ui button" type="submit" onclick="Submit()">Submit</button>
+		<button class="ui button" type="button" onclick="Submit()">Submit</button>
 	</form>
 
 	<style>
@@ -42,10 +46,36 @@
 	<script>
 		function Submit() {
 			var dish = {
-				name: $('.name').val(),
-				price: $('.price').val(),
-				image: $('.image').val()
+				name: $('#name').val(),
+				description: $('#description').val(),
+				price: $('#price').val(),
+				image: $('#image').val(),
+				dateFrom: $('#dateFrom').val(),
+				dateTo: $('#dateTo').val()
 			}
+
+			// Validation
+			$('.error').removeClass('error');
+			if (dish.price == '' || dish.price <= 0) $('#price').closest('.field').addClass('error');
+			if ($('.error').length > 0) {
+				return;
+			}
+			
+			// 1. Get menu from Local Storage
+			var menu = localStorage.getItem("DISH_MENU");
+
+			// 2. Menu should be an array. If it doesn't than crate array.
+			if (!Array.isArray(menu)) {
+				menu = [];
+			}
+
+			// 3. Add new dish to menu
+			menu.push(dish);
+
+			// 4. Save new menu to Local Storage
+			localStorage.setItem("DISH_MENU", menu);
+
+			alert("Saved!");
 		}
 	</script>
 
