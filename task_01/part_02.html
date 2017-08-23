@@ -64,16 +64,18 @@
 			// 1. Get menu from Local Storage
 			var menu = localStorage.getItem("DISH_MENU");
 
-			// 2. Menu should be an array. If it doesn't than crate array.
-			if (!Array.isArray(menu)) {
+			// 2. Menu should be not null. If it doesn't than crate array else parse json string
+			if (menu == null) {
 				menu = [];
+			} else {
+				menu = JSON.parse(menu);
 			}
 
 			// 3. Add new dish to menu
 			menu.push(dish);
 
 			// 4. Save new menu to Local Storage
-			localStorage.setItem("DISH_MENU", menu);
+			localStorage.setItem("DISH_MENU", JSON.stringify(menu));
 
 			alert("Saved!");
 		}

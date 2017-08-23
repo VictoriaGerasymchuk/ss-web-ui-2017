@@ -10,6 +10,35 @@
 	<body>
 		<div class="ui huge blue header">Menu</div>
 		<div class="ui two column stackable grid">
+			<script>
+				var menu = localStorage.getItem("DISH_MENU");
+				if (menu != null) {
+					menu = JSON.parse(menu);
+
+					for (var i = 0; i < menu.length; i++) {
+						document.write('<div class="column">																				 ');
+						document.write('	<div class="ui fluid image">																	 ');
+						document.write('		<div class="ui blue ribbon label">															 ');
+						document.write('			<i class="spoon icon"></i><a class="dishName" href="part_02.html">' + menu[i].name + '</a>			 ');
+						document.write('		</div>																						 ');
+						document.write('		<img src="' + menu[i].image.replace("C:\\fakepath\\", "./images/")+ '">								 ');
+						document.write('	</div>																							 ');
+						document.write('	<div class="ui tag labels price">																 ');
+						document.write('		<a class="ui label">																		 ');
+						document.write('			$' + menu[i].price + '																	 ');
+						document.write('		</a>																						 ');
+						document.write('	</div>																							 ');
+						document.write('	<p>' + menu[i].description + '</p>									 ');
+						document.write('	<div class="ui buttons">																		 ');
+						document.write('		<button class="ui button" onclick="Edit()"><a href="part_02.html">Edit</a></button>			 ');
+						document.write('		<div class="or"></div>																		 ');
+						document.write('		<button class="ui positive button" onclick="Delete()">Delete</button>						 ');
+						document.write('	</div>																							 ');
+						document.write('</div>																								 ');
+					}
+				}
+			</script>
+			<!--
 			<div class="column">
 				<div class="ui fluid image">
 					<div class="ui blue ribbon label">
@@ -86,7 +115,10 @@
 					<button class="ui positive button" onclick="Delete()">Delete</button>
 				</div>
 			</div>
+
+				-->
 		</div>
+				
 
 		<style>
 			.ui.image {
