@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { AddingDishComponent } from './adding-dish/adding-dish.component';
+import { MenuListComponent } from './menu-list/menu-list.component';
+
 
 @Component({
   selector: 'app-root',

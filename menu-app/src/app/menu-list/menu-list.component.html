@@ -1,0 +1,22 @@
+<div class="ui huge blue header">Menu</div>
+<div class="ui two column stackable grid" *ngFor="let dish of menu">
+	<div class="column">
+		<div class="ui fluid image">
+			<div class="ui blue ribbon label">
+				<i class="spoon icon"></i><a class="dishName" href="part_02.html">{{dish.name}}</a>
+			</div>
+			<img src="{{dish.image}}">
+		</div>
+		<div class="ui tag labels price">
+			<a class="ui label">
+				${{dish.price}}
+			</a>
+		</div>
+		<p>{{dish.description}}</p>
+		<div class="ui buttons">
+			<button class="ui button"><a href="part_02.html">Edit</a></button>
+			<div class="or"></div>
+			<button class="ui positive button">Delete</button>
+		</div>
+	</div>
+</div>
