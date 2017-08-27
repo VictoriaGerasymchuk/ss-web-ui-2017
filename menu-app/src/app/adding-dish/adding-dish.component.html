@@ -1,0 +1,28 @@
+<div class="ui form">
+	<div class="field">
+		<label>Name of dish</label>
+		<input type="text" id="name" placeholder="Name of dish" [(ngModel)]="dish.name">
+	</div>
+	<div class="field">
+		<label>Description</label>
+		<textarea id="description" [(ngModel)]="dish.description"></textarea>
+	</div>
+	<div class="field">
+		<label>Price</label>
+		<input type="number" id="price" placeholder="Price" [(ngModel)]="dish.price">
+	</div>
+	<div class="field">
+		<label>Image</label>
+		<input type="file" id="image" [(ngModel)]="dish.image">
+	</div>
+	<div class="field">
+		<label>Date From</label>
+		<input id="dateFrom" type="date" [(ngModel)]="dish.dateFrom">
+	</div>
+	<div class="field">
+		<label>Date To</label>
+		<input id="dateTo" type="date" [(ngModel)]="dish.dateTo">
+	</div>
+
+	<button class="ui button" type="button" onclick="Submit()">Submit</button>
+</div>

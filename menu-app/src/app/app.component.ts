@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AddingDishComponent } from './adding-dish/adding-dish.component';
 
 @Component({
   selector: 'app-root',
