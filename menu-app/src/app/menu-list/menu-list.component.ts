@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Dish } from '../Dish';
+
 
 @Component({
   selector: 'app-menu-list',
@@ -7,13 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuListComponent implements OnInit {
 
-  menu = [];
+	menu: Dish[];
 
-  constructor() {
-	var m = localStorage.getItem("DISH_MENU");
-	if (m != null) {
-		this.menu = JSON.parse(m);
-	}
+	constructor() {
+		var m = localStorage.getItem("DISH_MENU");
+		if (m != null) {
+			this.menu = JSON.parse(m);
+		}
   }
 
   ngOnInit() {

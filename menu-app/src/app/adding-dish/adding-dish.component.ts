@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Dish } from '../Dish';
 
 @Component({
   selector: 'app-adding-dish',
@@ -7,16 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddingDishComponent implements OnInit {
 
-	dish = {
-		name: '',
-		description: '',
-		price: 0,
-		image: '',
-		dateFrom: '',
-		dateTo: ''
-	}
+	dish: Dish;
 
-  constructor() { }
+	constructor() {
+		this.dish = new Dish();
+	}
 
   ngOnInit() {
   }

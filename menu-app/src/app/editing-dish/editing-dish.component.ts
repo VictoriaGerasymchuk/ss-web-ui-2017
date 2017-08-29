@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Dish } from '../Dish';
+
 
 @Component({
     selector: 'app-editing-dish',
@@ -7,15 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditingDishComponent implements OnInit {
 
-    dish = {
-        name: '',
-        description: '',
-        price: 0,
-        image: '',
-        dateFrom: '',
-        dateTo: ''
-    }
+    dish: Dish;
+
     constructor() {
+		this.dish = new Dish();
+
 		if (localStorage.getItem("DISH_MENU") != null) {
 			this.dish = JSON.parse(localStorage.getItem("DISH_MENU"))[0];
 		}
