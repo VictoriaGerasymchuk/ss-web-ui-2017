@@ -14,7 +14,7 @@
 		</div>
 		<p>{{dish.description}}</p>
 		<div class="ui buttons">
-			<button class="ui button"><a href="part_02.html">Edit</a></button>
+			<button class="ui button"><a [routerLink]="['edit', dish.id]">Edit</a></button>
 			<div class="or"></div>
 			<button class="ui positive button">Delete</button>
 		</div>

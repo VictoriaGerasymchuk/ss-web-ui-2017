@@ -1,4 +1,5 @@
 ﻿export class Dish {
+	id: number;
 	name: string;
 	description: string;
 	price: number;
@@ -7,6 +8,10 @@
 	dateTo: string;
 
 	constructor() {
+		// getting ticks for id
+		var d = new Date();
+		this.id = d.getTime();
+
 		this.name = '',
 		this.description = '',
 		this.price = 0,

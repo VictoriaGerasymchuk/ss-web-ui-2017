@@ -13,7 +13,7 @@ import { EditingDishComponent } from './editing-dish/editing-dish.component';
 const appRoutes: Routes = [
     { path: '', component: MenuListComponent },
     { path: 'add', component: AddingDishComponent },
-    { path: 'edit', component: EditingDishComponent }
+    { path: 'edit/:id', component: EditingDishComponent }
 ];
 
 @NgModule({
