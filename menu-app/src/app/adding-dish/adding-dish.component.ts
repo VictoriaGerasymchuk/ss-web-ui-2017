@@ -10,8 +10,13 @@ export class AddingDishComponent implements OnInit {
 
 	dish: Dish;
 
+	minDate: string;
+	maxDate: string;
+
 	constructor() {
 		this.dish = new Dish();
+
+		this.minDate = this.dish.dateFrom;
 	}
 
   ngOnInit() {
@@ -36,13 +41,6 @@ export class AddingDishComponent implements OnInit {
 	alert("Saved!");
 
 	// Clear data on form
-	this.dish = {
-		name: '',
-		description: '',
-		price: 0,
-		image: '',
-		dateFrom: '',
-		dateTo: ''
-	};
+	this.dish = new Dish();
   }
 }
