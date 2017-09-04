@@ -17,9 +17,21 @@ export class MenuListComponent implements OnInit {
 		if (m != null) {
 			this.menu = JSON.parse(m);
 		}
-  }
+	}
 
-  ngOnInit() {
-  }
+	ngOnInit() {
+	}
+
+	deleteDish(id: number): void {
+		// Find index in array
+		let index = this.menu.findIndex(d => d.id === id);
+		// Remove element from array
+		this.menu.splice(index, 1);
+
+		// Save new menu to Local Storage
+		localStorage.setItem("DISH_MENU", JSON.stringify(this.menu));
+
+		alert("Deleted!");
+	}
 
 }
