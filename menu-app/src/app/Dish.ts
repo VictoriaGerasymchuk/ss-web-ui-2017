@@ -38,7 +38,7 @@
 		if (month < 10) sunday += "0";  // 2017-0
 		sunday += month + "-";          // 2017-09
 		if (day < 10) sunday += "0";    // 2017-09-0
-		sunday += day;                  // 2017-09-04
+		sunday += day;                  // 2017-09-10
 
 		this.dateTo = sunday;
 	}

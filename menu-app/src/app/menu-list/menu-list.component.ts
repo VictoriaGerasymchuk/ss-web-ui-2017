@@ -1,35 +1,26 @@
 import { Component, OnInit } from '@angular/core';
-import { Dish } from '../Dish';
+import { Dish } from '../dish';
 import { Router } from '@angular/router';
+import { DataService } from '../data.service';
 
 
 @Component({
   selector: 'app-menu-list',
   templateUrl: './menu-list.component.html',
-  styleUrls: ['./menu-list.component.css']
+  styleUrls: ['./menu-list.component.css'],
+  providers: [DataService]
 })
 export class MenuListComponent implements OnInit {
 
-	menu: Dish[];
-
-	constructor() {
-		var m = localStorage.getItem("DISH_MENU");
-		if (m != null) {
-			this.menu = JSON.parse(m);
-		}
+	constructor(private data: DataService) {
 	}
 
 	ngOnInit() {
 	}
 
 	deleteDish(id: number): void {
-		// Find index in array
-		let index = this.menu.findIndex(d => d.id === id);
-		// Remove element from array
-		this.menu.splice(index, 1);
-
-		// Save new menu to Local Storage
-		localStorage.setItem("DISH_MENU", JSON.stringify(this.menu));
+		// Call metod deleteDish() from DataService
+		this.data.deleteDish(id);
 
 		alert("Deleted!");
 	}
