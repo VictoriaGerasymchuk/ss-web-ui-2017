@@ -1,24 +1,26 @@
 import { Component, OnInit } from '@angular/core';
 import { Dish } from '../dish';
 import { ActivatedRoute} from '@angular/router';
-import { DataService } from '../data.service';
+import { DataServiceLS } from '../data.service.ls';
+import { DataServiceIM } from '../data.service.im';
 
 
 @Component({
     selector: 'app-editing-dish',
     templateUrl: './editing-dish.component.html',
     styleUrls: ['./editing-dish.component.css'],
-	providers: [DataService]
+	providers: [DataServiceLS, DataServiceIM]
 })
 export class EditingDishComponent implements OnInit {
-    dish: Dish;
+	dish: Dish;
 
 	id: number;
 
 	// getting activateRoute for work with url
-	constructor(private activateRoute: ActivatedRoute, private data: DataService) {
+	constructor(private activateRoute: ActivatedRoute, private data: DataServiceIM) {
 		// getting id from url
 		this.id = activateRoute.snapshot.params['id'];
+		this.dish = new Dish();
 
 		//this.dish = this.data.getDish(this.id);
 		this.data

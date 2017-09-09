@@ -3,7 +3,7 @@
 import { Dish } from './dish';
 
 @Injectable()
-export class DataService {
+export class DataServiceLS {
 	menu: Dish[];
 
 	constructor() {
@@ -13,7 +13,7 @@ export class DataService {
 		}
 	}
 
-	deleteDish(id: number): Promise<any> {
+	deleteDish(id: number): Promise<void> {
 		return new Promise((resolve, reject) => {
 			// Find index in array
 			let index = this.menu.findIndex(d => d.id === id);
@@ -21,18 +21,18 @@ export class DataService {
 			this.menu.splice(index, 1);
 			resolve();
 		})
-		.then(() => this.saveChanges())
-		.catch(this.handleError);
+			.then(() => this.saveChanges())
+			.catch(this.handleError);
 	}
 
-	addDish(dish: Dish): Promise<any> {
+	addDish(dish: Dish): Promise<void> {
 		return new Promise((resolve, reject) => {
 			// Add new dish to menu
 			this.menu.push(dish);
 			resolve();
 		})
-		.then(() => this.saveChanges())
-		.catch(this.handleError);
+			.then(() => this.saveChanges())
+			.catch(this.handleError);
 	}
 
 	getDish(id: number): Promise<Dish> {
@@ -47,7 +47,7 @@ export class DataService {
 		}).catch(this.handleError);
 	}
 
-	editDish(dish: Dish): Promise<any> {
+	editDish(dish: Dish): Promise<void> {
 		return new Promise((resolve, reject) => {
 			// Saving current dish to menu
 			for (var i in this.menu) {
@@ -57,8 +57,8 @@ export class DataService {
 				}
 			}
 		})
-		.then(() => this.saveChanges())
-		.catch(this.handleError);
+			.then(() => this.saveChanges())
+			.catch(this.handleError);
 	}
 
 	saveChanges(): void {

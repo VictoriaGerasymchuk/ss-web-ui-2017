@@ -1,18 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { Dish } from '../dish';
 import { Router } from '@angular/router';
-import { DataService } from '../data.service';
+import { DataServiceLS } from '../data.service.ls';
+import { DataServiceIM } from '../data.service.im';
 
 
 @Component({
   selector: 'app-menu-list',
   templateUrl: './menu-list.component.html',
   styleUrls: ['./menu-list.component.css'],
-  providers: [DataService]
+  providers: [DataServiceLS, DataServiceIM]
 })
 export class MenuListComponent implements OnInit {
 
-	constructor(private data: DataService) {
+	constructor(private data: DataServiceIM) {
 	}
 
 	ngOnInit() {
