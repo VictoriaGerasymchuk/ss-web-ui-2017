@@ -20,9 +20,8 @@ export class MenuListComponent implements OnInit {
 
 	deleteDish(id: number): void {
 		// Call metod deleteDish() from DataService
-		this.data.deleteDish(id);
-
-		alert("Deleted!");
+		this.data.deleteDish(id)
+			.then(() => alert("Deleted!"));
 	}
 
 }

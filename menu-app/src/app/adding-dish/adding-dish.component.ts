@@ -25,10 +25,11 @@ export class AddingDishComponent implements OnInit {
 	}
 
 	addDish() {
-		this.data.addDish(this.dish);
-		alert("Saved!");
-
-		// Redirect to menu page
-		window.location.href = '/';
+		this.data
+			.addDish(this.dish)
+			.then(() => {
+				alert("Saved!");
+				window.location.href = '/';
+			});
 	}
 }

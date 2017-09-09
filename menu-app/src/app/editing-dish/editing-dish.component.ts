@@ -20,18 +20,23 @@ export class EditingDishComponent implements OnInit {
 		// getting id from url
 		this.id = activateRoute.snapshot.params['id'];
 
-		this.dish = this.data.getDish(this.id);
+		//this.dish = this.data.getDish(this.id);
+		this.data
+			.getDish(this.id)
+			.then(dishFromPromise => this.dish = dishFromPromise);
 	}
 
-    ngOnInit() {
-    }
+	ngOnInit() {
+	}
 
-    editDish(): void {
-		this.data.editDish(this.dish);
-        alert("Saved!");
-
-        window.location.href = '/';
-    }
+	editDish(): void {
+		this.data
+			.editDish(this.dish)
+			.then(() => {
+				alert("Saved!");
+				window.location.href = '/';
+			});
+	}
 }
 
 
