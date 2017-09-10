@@ -13,11 +13,7 @@ export class DataServiceIM {
 	menu: Dish[];
 
 	constructor(private http: Http) {
-		this.http.get(this.dishesUrl)
-			.toPromise()
-			.then(response => this.menu = response.json().data as Dish[])
-
-			.catch(this.handleError);
+		this.getMenuFromIM();
 	}
 
 	private handleError(error: any): Promise<any> {
@@ -25,11 +21,18 @@ export class DataServiceIM {
 		return Promise.reject(error.message || error);
 	}
 
+	getMenuFromIM() {
+		this.http.get(this.dishesUrl)
+			.toPromise()
+			.then(response => this.menu = response.json().data as Dish[])
+			.catch(this.handleError);
+	}
+
 	deleteDish(id: number): Promise<void> {
 		const url = `${this.dishesUrl}/${id}`;
 		return this.http.delete(url, { headers: this.headers })
 			.toPromise()
-			//.then(() => {})
+			.then(() => this.getMenuFromIM()) // reload data from IM after deleting
 			.catch(this.handleError);
 
 	}
