@@ -4,7 +4,7 @@
 			<div class="ui brown ribbon label">
 				<i class="spoon icon"></i><a class="dishName" href="part_02.html">{{dish.name}}</a>
 			</div>
-			<a [routerLink]="['edit', dish.id]">
+			<a [routerLink]="['edit', 'baker', dish.id]">
 				<img src="{{dish.image}}">
 			</a>
 			<p>{{dish.description}}</p>
@@ -14,7 +14,7 @@
 				</a>
 			</div>
 			<div class="ui buttons">
-				<button class="ui button"><a [routerLink]="['edit', dish.id]">Edit</a></button>
+				<button class="ui button"><a [routerLink]="['edit', 'admin', dish.id]">Edit</a></button>
 				<div class="or"></div>
 				<button class="ui positive button" (click)="deleteDish(dish.id)">Delete</button>
 			</div>

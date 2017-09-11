@@ -20,7 +20,7 @@ import { DataServiceIM } from './data.service.im';
 const appRoutes: Routes = [
     { path: '', component: MenuListComponent },
     { path: 'add', component: AddingDishComponent },
-    { path: 'edit/:id', component: EditingDishComponent }
+    { path: 'edit/:user/:id', component: EditingDishComponent }
 ];
 
 @NgModule({

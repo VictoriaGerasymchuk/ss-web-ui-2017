@@ -15,11 +15,13 @@ export class EditingDishComponent implements OnInit {
 	dish: Dish;
 
 	id: number;
+	user: string;
 
 	// getting activateRoute for work with url
 	constructor(private activateRoute: ActivatedRoute, private data: DataServiceIM) {
 		// getting id from url
 		this.id = activateRoute.snapshot.params['id'];
+		this.user = activateRoute.snapshot.params['user'];
 		this.dish = new Dish();
 
 		//this.dish = this.data.getDish(this.id);
