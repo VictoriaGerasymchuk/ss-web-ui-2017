@@ -1,22 +1,23 @@
-<div class="ui huge blue header">Menu</div>
-<div class="ui two column stackable grid" *ngFor="let dish of data.menu">
-	<div class="column">
+<div class="ui four column stackable grid" >
+	<div class="column" *ngFor="let dish of data.menu">
 		<div class="ui fluid image">
-			<div class="ui blue ribbon label">
+			<div class="ui brown ribbon label">
 				<i class="spoon icon"></i><a class="dishName" href="part_02.html">{{dish.name}}</a>
 			</div>
-			<img src="{{dish.image}}">
-		</div>
-		<div class="ui tag labels price">
-			<a class="ui label">
-				${{dish.price}}
+			<a [routerLink]="['edit', dish.id]">
+				<img src="{{dish.image}}">
 			</a>
-		</div>
-		<p>{{dish.description}}</p>
-		<div class="ui buttons">
-			<button class="ui button"><a [routerLink]="['edit', dish.id]">Edit</a></button>
-			<div class="or"></div>
-			<button class="ui positive button" (click)="deleteDish(dish.id)">Delete</button>
+			<p>{{dish.description}}</p>
+			<div class="ui tag labels price">
+				<a class="ui label">
+					${{dish.price}}
+				</a>
+			</div>
+			<div class="ui buttons">
+				<button class="ui button"><a [routerLink]="['edit', dish.id]">Edit</a></button>
+				<div class="or"></div>
+				<button class="ui positive button" (click)="deleteDish(dish.id)">Delete</button>
+			</div>
 		</div>
 	</div>
 </div>
