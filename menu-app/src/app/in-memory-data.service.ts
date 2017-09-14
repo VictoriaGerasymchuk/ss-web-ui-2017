@@ -65,9 +65,15 @@ export class InMemoryDataService implements InMemoryDbService {
 				dateFrom: '2017-09-11',
 				dateTo: '2017-09-17'
 			},
-			
-
-
+			{
+				id: 1504698517747,
+				name: 'Almond croissant',
+				description: 'jkbh;kjgnkgjhbkgllkjl',
+				price: 3,
+				image: 'https://images.fineartamerica.com/images-medium-large-5/almond-croissant-nathalie-amber.jpg',
+				dateFrom: '2017-09-14',
+				dateTo: '2017-09-17'
+			}
 		];
 		return { dishes };
 	}
