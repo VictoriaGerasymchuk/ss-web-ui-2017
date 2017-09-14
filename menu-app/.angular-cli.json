@@ -12,7 +12,8 @@
 		"js",
 		"semantic",
 		"favicon.ico",
-		"font"
+		"font",
+		"images"
       ],
       "index": "index.html",
       "main": "main.ts",

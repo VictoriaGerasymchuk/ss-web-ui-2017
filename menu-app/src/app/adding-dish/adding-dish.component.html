@@ -136,9 +136,9 @@
 	<div class="five wide column">
 		<div class="ui fluid image">
 			<div class="ui brown ribbon label">
-				<i class="spoon icon"></i><a class="dishName" href="part_02.html">{{dish.name}}</a>
+				<i class="spoon icon"></i>{{dish.name}}
 			</div>
-			<img src="{{dish.image}}">
+			<img src="{{dish.image}}" onerror="this.src = './images/default-image.jpg';">
 			<p>{{dish.description}}</p>
 			<div class="ui tag labels price">
 				<a class="ui label">
