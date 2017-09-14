@@ -21,7 +21,7 @@
 	</div>
 	<div class="field">
 		<label>Date To</label>
-		<input id="dateTo" type="date" [disabled] ="user == 'admin'" [(ngModel)]="dish.dateTo">
+		<input id="dateTo" type="date" [(value)]="dateTo" disabled>
 	</div>
 
 	<button class="ui button" type="button" (click)="editDish()">Save changes</button>

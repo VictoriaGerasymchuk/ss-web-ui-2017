@@ -14,7 +14,10 @@ export class AddingDishComponent implements OnInit {
 	dish: Dish;
 
 	minDate: string;
-	maxDate: string;
+
+	get dateTo() {
+		return this.dish.dateTo;
+	}
 
 	constructor(private data: DataServiceIM) {
 		this.dish = new Dish();
