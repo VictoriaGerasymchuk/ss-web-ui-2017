@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { AddingDishComponent } from './adding-dish/adding-dish.component';
 import { MenuListComponent } from './menu-list/menu-list.component';
 import { DataServiceLS } from './data.service.ls';

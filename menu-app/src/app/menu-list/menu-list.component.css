@@ -7,7 +7,7 @@ body {
 }
 
 .ui.ribbon.label {
-	background-color: rgb(194, 101, 67) !important;
+	background-color: rgb(98, 77, 94) !important;
 }
 
 .ui.buttons {
@@ -16,9 +16,9 @@ body {
 }
 
 .ui.button {
-	background-color: #e5c6b2;
+	background-color: #d2c2bd;
 }
 
 .ui.positive.button {
-	background-color: rgba(194, 101, 67, 0.84);
+	background-color: rgb(98, 77, 94);
 }

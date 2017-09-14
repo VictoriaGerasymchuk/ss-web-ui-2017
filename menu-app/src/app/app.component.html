@@ -1,3 +1,29 @@
 <div>
-	<router-outlet></router-outlet>
+	<header>
+		<h2 class="ui center aligned icon brown header bakery-font">
+			<div class="bakery-title">
+				Bakery
+			</div>
+		</h2>
+		<div class="ui secondary pointing menu bakery-font" id="main-menu">
+			<a class="item" [routerLink]="['']">
+				Home
+			</a>
+			<a class="item" [routerLink]="['add']">
+				Add
+			</a>
+		</div>
+	</header>
+	
+	<div class="content">
+		<router-outlet></router-outlet>
+	</div>
+	
+	<footer>
+		<h6 class="ui center aligned brown bakery-font">
+			<div class="footer-text">
+				Victoria Gerasymchuk 2017
+			</div>
+		</h6>
+	</footer>
 </div>

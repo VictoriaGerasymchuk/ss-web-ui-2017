@@ -10,22 +10,4 @@ body {
 
 .bakery-font {
 	font-family: bakery !important;
-	margin-bottom: 80px !important;
-}
-
-.bakery-title {
-	font-size: 150px;
-	margin-top: 80px;
-}
-
-header {
-	width: 100%;
-	height:300px;
-	padding-top: 1px;
-	background-size: cover; 
-	background-image: url(https://i.pinimg.com/564x/78/95/26/7895261aac916c1fdc3f1380f8a0dce9.jpg);
-}
-
-.content {
-	padding: 30px;
 }

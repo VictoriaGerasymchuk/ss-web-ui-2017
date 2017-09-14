@@ -1,0 +1,67 @@
+.bakery-title {
+	font-size: 150px;
+	margin-top: 105px;
+	font-size: 150px;
+    margin-top: 105px;
+    text-shadow: 0px 0px 0px rgb(194, 101, 67);
+    color: rgba(59, 68, 106, 0.71);
+}
+
+header {
+	width: 100%;
+	height:295px;
+	padding-top: 1px;
+	background-size: cover; 
+	background-image: url(https://waltdisney.org/sites/default/files/watercolors-header.jpg);
+	background-attachment: fixed;
+	box-shadow: 0 6px 10px -3px rgb(70, 70, 102);
+}
+
+#main-menu.ui.secondary.menu {
+	position: absolute;
+    top: 213px;
+	padding-left: 20px;
+	font-size: 15px;
+	border-bottom: none;
+}
+
+#main-menu.ui.secondary.menu a:active {
+	border-bottom: none;
+}
+
+.menu a {
+	font-size: 30px;
+	color: rgb(237, 237, 240) ;
+}
+
+#main-menu.ui.secondary.menu .item {
+	color: rgb(237, 237, 240);
+}
+
+#main-menu.ui.secondary.menu .item:hover {
+	color: rgb(176, 181, 185);
+}
+
+footer {
+	background-image: url(https://waltdisney.org/sites/default/files/watercolors-header.jpg);
+	background-attachment: fixed;
+	height: 150px;
+	background-position-y: 303px;
+	box-shadow: 0px 8px 10px 10px rgb(70, 70, 102);
+}
+
+h6 {
+	padding-top: 5px;
+}
+
+.footer-text {
+	text-align:center;
+	margin-top: 35px;
+	font-size: 30px !important;
+	text-shadow: 1px 1px 0px #FFF !important;
+    color: rgb(64, 49, 61) !important;
+}
+
+.content {
+	padding: 30px;
+}
