@@ -15,6 +15,14 @@
 	background-color: #d2c2bd;
 }
 
+.edit-delete-buttons {
+	visibility: hidden;
+}
+
+.dish-element:hover .edit-delete-buttons {
+	visibility: visible;
+}
+
 .ui.positive.button {
 	background-color: rgb(98, 77, 94);
 }
