@@ -1,29 +1,132 @@
-<div class="ui form">
-	<div class="field">
-		<label>Name of dish</label>
-		<input type="text" id="name" placeholder="Name of dish" [disabled] ="user == 'admin'" [(ngModel)]="dish.name">
-	</div>
-	<div class="field">
-		<label>Description</label>
-		<textarea id="description" placeholder="Description of dish" [disabled] ="user == 'admin'" [(ngModel)]="dish.description"></textarea>
-	</div>
-	<div class="field">
-		<label>Price</label>
-		<input type="number" id="price" placeholder="Price of dish" [disabled] ="user == 'baker'" [(ngModel)]="dish.price">
-	</div>
-	<div class="field">
-		<label>Image</label>
-		<input type="url" id="image" placeholder="Url of image" [disabled] ="user == 'admin'" [(ngModel)]="dish.image">
-	</div>
-	<div class="field">
-		<label>Date From</label>
-		<input id="dateFrom" type="date" [disabled] ="user == 'admin'" [(ngModel)]="dish.dateFrom">
-	</div>
-	<div class="field">
-		<label>Date To</label>
-		<input id="dateTo" type="date" [(value)]="dateTo" disabled>
+<form #editDishForm="ngForm" class="ui form">
+		<!--Name-->
+		<div class="form-group field" [ngClass]="{'error': name.invalid && (name.dirty || name.touched) }">
+			<label for="name">Name of dish</label>
+			<input class="form-control"
+				   required
+				   minlength="2"
+				   maxlength="30"
+				   type="text"
+				   name="name"
+				   id="name"
+				   placeholder="Name of dish"
+				   [(ngModel)]="dish.name"
+				   [disabled] ="user == 'admin'"
+				   #name="ngModel">
+
+			<div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
+				<div *ngIf="name.errors.required">
+					Name is required.
+				</div>
+				<div *ngIf="name.errors.minlength">
+					Name must be at least 2 characters long.
+				</div>
+				<div *ngIf="name.errors.maxlength">
+					Name cannot be more than 30 characters long.
+				</div>
+			</div>
+		</div>
+
+	<!--Description-->
+	<div class="form-group field" [ngClass]="{'error': description.invalid && (description.dirty || description.touched) }">
+		<label for="description">Description</label>
+		<textarea class="form-control"
+				  required
+				  minlength="10"
+				  maxlength="100"
+				  id="description"
+				  name="description"
+				  placeholder="Description of dish"
+				  [(ngModel)]="dish.description"
+				  [disabled]="user == 'admin'"
+				  #description="ngModel"></textarea>
+
+		<div *ngIf="description.invalid && (description.dirty || description.touched)" class="alert alert-danger">
+			<div *ngIf="description.errors.required">
+				Description is required.
+			</div>
+			<div *ngIf="description.errors.minlength">
+				Description must be at least 10 characters long.
+			</div>
+			<div *ngIf="description.errors.maxlength">
+				Description cannot be more than 100 characters long.
+			</div>
+		</div>
 	</div>
 
-	<button class="ui button" type="button" (click)="editDish()">Save changes</button>
-</div>
+	<!--Price-->
+	<div class="form-group field" [ngClass]="{'error': price.invalid && (price.dirty || price.touched) }">
+		<label for="price">Price</label>
+		<input class="form-control"
+			   type="number"
+			   required
+			   pattern="[1-9]+[0-9.]*"
+			   id="price"
+			   name="price"
+			   placeholder="Price of dish"
+			   [(ngModel)]="dish.price"
+			   [disabled]="user == 'baker'"
+			   #price="ngModel" />
+		<div *ngIf="price.invalid && (price.dirty || price.touched)" class="alert alert-danger">
+			<div *ngIf="price.errors.required">
+				Price is required.
+			</div>
+			<div *ngIf="price.errors.pattern">
+				Price must be at least 1$.
+			</div>
+		</div>
+	</div>
+
+	<!--Image-->
+	<div class="form-group field" [ngClass]="{'error': image.invalid && (image.dirty || image.touched) }">
+		<label for="image">Image</label>
+		<input class="form-control"
+			   type="url"
+			   required
+			   pattern="https?://.+"
+			   id="image"
+			   name="image"
+			   placeholder="Url of image"
+			   [(ngModel)]="dish.image"
+			   [disabled]="user == 'admin'"
+			   #image="ngModel">
+		<div *ngIf="image.invalid && (image.dirty || image.touched)" class="alert alert-danger">
+			<div *ngIf="image.errors.required">
+				URL is required!
+			</div>
+			<div *ngIf="image.errors.pattern">
+				Must be a valid URL!
+			</div>
+		</div>
+	</div>
+
+	<!--DateFrom-->
+	<div class="form-group field" [ngClass]="{'error': dateFrom.invalid && (dateFrom.dirty || dateFrom.touched) }">
+		<label for="dateFrom">Date From</label>
+		<input id="dateFrom"
+			   type="date"
+			   required
+			   min="{{minDate}}"
+			   name="dateFrom"
+			   [(ngModel)]="dish.dateFrom"
+			   [disabled]="user == 'admin'"
+			   #dateFrom="ngModel">
+		<div *ngIf="dateFrom.invalid && (dateFrom.dirty || dateFrom.touched)" class="alert alert-danger">
+			<div *ngIf="dateFrom.errors.required">
+				Date is required!
+			</div>
+		</div>
+	</div>
+	<!--DateTo-->
+	<div class="form-group field">
+		<label for="dateTo">Date To</label>
+		<input id="dateTo"
+			   type="date"
+			   name="dateTo"
+			   [(value)]="dateTo"
+			   disabled>
+	</div>
+
+	<button [disabled]="editDishForm.invalid" class="ui button" type="submit" (click)="editDish()">Save changes</button>
+</form>
 
