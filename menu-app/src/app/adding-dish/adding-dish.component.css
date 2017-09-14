@@ -1,0 +1,7 @@
+.price {
+	float: right;
+}
+
+.ui.ribbon.label {
+	background-color: rgb(98, 77, 94) !important;
+}

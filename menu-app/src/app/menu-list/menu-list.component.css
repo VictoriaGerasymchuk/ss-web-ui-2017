@@ -2,10 +2,6 @@
 	float: right;
 }
 
-body {
-	padding: 20px;
-}
-
 .ui.ribbon.label {
 	background-color: rgb(98, 77, 94) !important;
 }
